@@ -1,7 +1,8 @@
 import React from "react";
 
-const SwitAlert = ({ isOpen, onClose, formData }) => {
+const SwitAlert = ({ isOpen, onClose, formData, onClick }) => {
     if (!isOpen) return null;
+    console.log(formData.firstName)
 
     return (
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50">
@@ -37,6 +38,9 @@ const SwitAlert = ({ isOpen, onClose, formData }) => {
                     <p className="text-gray-500 dark:text-gray-400 mt-2">
                         <strong>Gender:</strong> {formData.gender}
                     </p>
+                    <button onClick={onClick}
+                        className="text-gray-900 mt-5  bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Edit
+                    </button>
                 </div>
             </div>
         </div>
